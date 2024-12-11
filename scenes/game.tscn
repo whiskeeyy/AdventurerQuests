@@ -635,10 +635,10 @@ position = Vector2(2231, 118)
 position = Vector2(168, 52)
 
 [node name="Slime" parent="Enemy" instance=ExtResource("6_o2a7a")]
-position = Vector2(727, 67)
+position = Vector2(727, 69)
 
 [node name="Slime3" parent="Enemy" instance=ExtResource("6_o2a7a")]
-position = Vector2(1930, 131)
+position = Vector2(1927, 132)
 
 [node name="Platforms" type="Node" parent="."]
 
