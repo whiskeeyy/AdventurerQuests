@@ -1,11 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://duk71gqhii6cw"]
+[gd_scene load_steps=21 format=3 uid="uid://duk71gqhii6cw"]
 
 [ext_resource type="PackedScene" uid="uid://c2xp1m75w2lb1" path="res://scenes/player.tscn" id="1_dbunh"]
+[ext_resource type="Script" path="res://scipt/game_managergd.gd" id="1_jyh3g"]
 [ext_resource type="Texture2D" uid="uid://dlvo8tn8104br" path="res://assets/sprites/world_tileset.png" id="2_jnw0t"]
 [ext_resource type="PackedScene" uid="uid://bvpp81d7bqgcs" path="res://scenes/platform.tscn" id="3_teofb"]
 [ext_resource type="PackedScene" uid="uid://b8ovi51m1yefm" path="res://scenes/coin.tscn" id="4_1yvbq"]
 [ext_resource type="PackedScene" uid="uid://cvga8th2tn7vx" path="res://scenes/killzone.tscn" id="5_autx5"]
 [ext_resource type="PackedScene" uid="uid://v8pqovr6khf8" path="res://scenes/slime.tscn" id="6_o2a7a"]
+[ext_resource type="FontFile" uid="uid://dgqaeqy1qsckk" path="res://assets/fonts/PixelOperator8.ttf" id="7_avoty"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5xgx"]
 texture = ExtResource("2_jnw0t")
@@ -551,6 +553,10 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_jyh3g")
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, 0)
 tile_set = SubResource("TileSet_gosp1")
@@ -570,7 +576,7 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="Killzone" parent="." instance=ExtResource("5_autx5")]
-position = Vector2(3, -5)
+position = Vector2(1628, 56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(-6, 70)
@@ -675,3 +681,13 @@ autoplay = "move"
 
 [node name="Slime2" parent="." instance=ExtResource("6_o2a7a")]
 position = Vector2(168, 52)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -248.0
+offset_top = -30.0
+offset_right = -74.0
+offset_bottom = 5.0
+theme_override_fonts/font = ExtResource("7_avoty")
+theme_override_font_sizes/font_size = 8
+text = "AD TO MOVE
+SPACE TO JUMP."
